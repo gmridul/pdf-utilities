@@ -15,7 +15,7 @@ for i in range(infile.getNumPages()):
     if ptr == len(page_del) or i < page_del[ptr]:
         p = infile.getPage(int(i))
         outfile.addPage(p)
-    elif i == page_del:
+    elif i == page_del[ptr]:
         ptr+=1
 
 with open(sys.argv[-1], 'wb') as f:
